@@ -1,4 +1,3 @@
-import avatar from './avatar.jpg'
 import logo from './logo.svg'
 import { useEffect } from "react"
 
@@ -36,8 +35,7 @@ const TopBar = () => {
 
                 <Link to="/">
                 <div className="d-flex justify-content-center align-items-center">
-                   <img width={"40px"} src={logo} alt=""/> 
-                    <span className="mx-1">System Admin</span>
+                   <img width={"140px"} src={logo} alt=""/> 
                 </div>
                 </Link>
 
