@@ -1,0 +1,199 @@
+{
+  "providers": [
+    {
+      "id": 1,
+      "fullname": "Johan Castillo",
+      "rif": "283334241",
+      "type": "Ordinario",
+      "registration_date": "13-02-2021",
+      "service": "Desarrollo de Software Full-Stack",
+      "email": "jcjohan2707@gmail.com",
+      "address": "Caracas, Petare",
+      "phone": "04242183299",
+      "photo": {},
+      "image": "https://johancastillo.github.io/education360-images/images/categories/business.jpg"
+    },
+    {
+      "id": 2,
+      "fullname": "Yariii",
+      "rif": "273334241",
+      "type": "Ordinario",
+      "registration_date": "13-02-2021",
+      "service": "Diseño Gráfico",
+      "email": "yarii@gmail.com",
+      "address": "Caracas, Plaza Venezuela",
+      "phone": "04242183299",
+      "photo": {},
+      "image": "https://johancastillo.github.io/education360-images/images/categories/dibujo.png"
+    },
+    {
+      "id": 3,
+      "fullname": "Darwin Bandri",
+      "rif": "263334241",
+      "image": "https://johancastillo.github.io/education360-images/images/categories/fisica.png",
+      "service": "Desarrollo de Software",
+      "email": "jcjohan2707@gmail.com",
+      "phone": "04242183299",
+      "type": "Ordinario",
+      "address": "Caracas, Petare",
+      "registration_date": "13-02-2021"
+    },
+    {
+      "id": 4,
+      "fullname": "Darwin Bandri 2",
+      "rif": "253334241",
+      "image": "https://johancastillo.github.io/education360-images/images/categories/fisica.png",
+      "service": "Desarrollo de Software",
+      "email": "jcjohan2707@gmail.com",
+      "phone": "04242183299",
+      "type": "Ordinario",
+      "address": "Caracas, Petare",
+      "registration_date": "13-02-2021"
+    },
+    {
+      "id": 5,
+      "fullname": "Andrea Guerra",
+      "rif": "32504601",
+      "type": "Ordinario",
+      "registration_date": "",
+      "service": "Comer",
+      "email": "andreajguerra_11@hotmail.com",
+      "address": "Caracas",
+      "phone": "2555555",
+      "photo": {},
+      "image": "https://johancastillo.github.io/education360-images/images/categories/marketing.jpg"
+    },
+    {
+      "id": 6,
+      "fullname": "Forlan",
+      "rif": "234234",
+      "type": "Ordinario",
+      "registration_date": "",
+      "service": "Hellooo",
+      "email": "forlan@gmail.com",
+      "address": "Petare",
+      "phone": "54521200",
+      "photo": {},
+      "image": "https://johancastillo.github.io/education360-images/images/categories/kids.png"
+    },
+    {
+      "id": 7,
+      "fullname": "Juana Pérez",
+      "rif": "455893",
+      "type": "Especial",
+      "registration_date": "",
+      "service": "Contabilidad",
+      "email": "ella@gmail.com",
+      "address": "Caracas",
+      "phone": "04141559833",
+      "photo": {},
+      "image": "https://johancastillo.github.io/education360-images/images/categories/literatura.png"
+    }
+  ],
+  "clients": [
+    {
+      "id": 1,
+      "name": "Darwin"
+    }
+  ],
+  "historical": [
+    {
+      "id": 1,
+      "type": "Pago",
+      "value": "+20",
+      "date": "14-02-2021",
+      "description": "Servicio"
+    },
+    {
+      "id": 2,
+      "type": "Pago",
+      "value": "+50",
+      "date": "14-02-2021",
+      "description": "Servicio"
+    },
+    {
+      "id": 3,
+      "type": "Deuda",
+      "value": "-50",
+      "date": "14-02-2021",
+      "description": "Servicio"
+    },
+    {
+      "id": 4,
+      "type": "Deuda",
+      "value": "-70",
+      "date": "14-02-2021",
+      "description": "Servicio"
+    },
+    {
+      "id": 5,
+      "type": "Pago",
+      "value": "+50",
+      "date": "14-02-2021",
+      "description": "Servicio"
+    },
+    {
+      "id": 6,
+      "type": "Deuda",
+      "value": "-250",
+      "date": "14-02-2021",
+      "description": "Servicio"
+    },
+    {
+      "id": 7,
+      "type": "Pago",
+      "value": "+150",
+      "date": "15-02-2021",
+      "description": "Servicio"
+    },
+    {
+      "id": 8,
+      "type": "Deuda",
+      "date": "27-07-2021",
+      "description": "Mi cumpleaños",
+      "value": "-100"
+    },
+    {
+      "id": 9,
+      "type": "Pago",
+      "date": "28-05-2021",
+      "description": "Holaa",
+      "value": "+50"
+    },
+    {
+      "id": 10,
+      "type": "Pago",
+      "date": "hoy",
+      "description": "Holaaa",
+      "value": "+100"
+    },
+    {
+      "id": 11,
+      "type": "Pago",
+      "date": "14-02-2021",
+      "description": "adadad",
+      "value": "+200"
+    },
+    {
+      "id": 12,
+      "type": "Pago",
+      "date": "27-89ada",
+      "description": "asdasda",
+      "value": "+200"
+    },
+    {
+      "id": 13,
+      "type": "Pago",
+      "date": "mañana",
+      "description": "fesdfsdf",
+      "value": "+400"
+    },
+    {
+      "id": 14,
+      "type": "Pago",
+      "date": "17-02-2021",
+      "description": "Nuevo registro",
+      "value": "+700"
+    }
+  ]
+}
