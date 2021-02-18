@@ -12,6 +12,7 @@ import Orders from './pages/orders/Orders'
 
 import { useLocation } from "wouter";
 import CreateProvider from './pages/create-provider/CreateProvider';
+import GiftCard from './pages/giftcard/GiftCard';
 
 const App = () => {
   const [location, setLocation] = useLocation();
@@ -42,6 +43,7 @@ const App = () => {
         <Switch>
           <Route path="/" component={Home} />
           <Route path="/pedidos" component={Orders} />
+          <Route path="/giftcard" component={GiftCard} />
           <Route path="/proveedores/:rif" component={ProviderProfile} />
           <Route path="/editar-proveedor/:id" component={EditProvider} />
           <Route path="/crear-proveedor" component={CreateProvider} />

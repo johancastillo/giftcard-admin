@@ -26,10 +26,10 @@ const Menu = () => {
                 </a>
             </Link>
 
-            <Link href="/clientes" onClick={clientPage}>
+            <Link href="/giftcard" onClick={clientPage}>
                 <a className={page === 'client' ? 'active' : ""}>
-                <i class="fas fa-users"></i>
-                Clientes
+                <i class="fas fa-credit-card"></i>
+                    Gift Card
                 </a>
             </Link>
 
@@ -46,7 +46,7 @@ const Menu = () => {
             </Link>
 
             <Link href="/">
-                <i class="fas fa-credit-card"></i>
+                <i class="fas fa-users"></i>
                 Banco
             </Link>
 

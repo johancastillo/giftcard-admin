@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react"
 import axios from 'axios'
 import { Link } from "wouter"
@@ -13,7 +14,7 @@ const stateSelection = {
 
 }
 
-const Orders = () => {
+const GiftCard = () => {
     const [orders, setOrders] = useState([])
     const [filters, setFilters] = useState({ name: "" })
 
@@ -89,7 +90,7 @@ const Orders = () => {
 
 
             <div clasName="p-4">
-                <h3 className="text-center mt-4">Pedidos</h3>
+                <h3 className="text-center mt-4">Gift Card</h3>
 
 
                 <div className="container px-4 d-flex justify-content-between">
@@ -219,4 +220,4 @@ const Orders = () => {
     )
 }
 
-export default Orders
+export default GiftCard
