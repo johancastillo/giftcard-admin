@@ -8,7 +8,7 @@ import EditProvider from './pages/edit-provider/EditProvider'
 import Home from './pages/home/Home'
 import PageNotFound from './pages/page-not-found/PageNotFound'
 import ProviderProfile from './pages/provider-profile/ProviderProfile'
-import Providers from './pages/orders/Orders'
+import Orders from './pages/orders/Orders'
 
 import { useLocation } from "wouter";
 import CreateProvider from './pages/create-provider/CreateProvider';
@@ -41,7 +41,7 @@ const App = () => {
 
         <Switch>
           <Route path="/" component={Home} />
-          <Route path="/proveedores" component={Providers} />
+          <Route path="/pedidos" component={Orders} />
           <Route path="/proveedores/:rif" component={ProviderProfile} />
           <Route path="/editar-proveedor/:id" component={EditProvider} />
           <Route path="/crear-proveedor" component={CreateProvider} />

@@ -89,7 +89,9 @@ const Providers = () => {
                 <table className="table table-striped table-hover">
                     <thead className="table-dark">
                         <tr>
-                            <th scope="col">Pedido</th>
+                            <th scope="col">#</th>
+                            <th scope="col">Emisor</th>
+                            <th scope="col">Beneficiario</th>
                             <th scope="col">Fecha</th>
                             <th scope="col">Estado</th>
                             <th scope="col">Acciones</th>
@@ -105,8 +107,16 @@ const Providers = () => {
                                     <Link href={`/proveedores/${order.id}`}>
                                         <tr style={{ cursor: 'pointer' }}>
                                             <th scope="row">
-                                                {`#${order.id} ${order.transmitter_name}`}
+                                                {`#${order.id}`}
                                             </th>
+
+                                            <td className="text-capitalize">
+                                                {`${order.transmitter_name}`}
+                                            </td>
+
+                                            <td className="text-capitalize">
+                                                {`${order.recipients_name}`}
+                                            </td>
 
                                             <td className="text-capitalize">
                                                 {`${order.date} ${order.time}`}

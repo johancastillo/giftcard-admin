@@ -19,10 +19,10 @@ const Menu = () => {
             </Link>
 
 
-            <Link href="/proveedores" onClick={providerPage}>
+            <Link href="/pedidos" onClick={providerPage}>
                 <a className={page === 'provider' ? 'active' : ""}>
                     <i class="fas fa-box-open"></i>
-                Proveedores
+                Pedidos
                 </a>
             </Link>
 
