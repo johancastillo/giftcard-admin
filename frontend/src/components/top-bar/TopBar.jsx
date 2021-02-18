@@ -35,7 +35,7 @@ const TopBar = () => {
 
                 <Link to="/">
                 <div className="d-flex justify-content-center align-items-center">
-                   <img width={"140px"} src={logo} alt=""/> 
+                   <img width={"180px"} src={logo} alt=""/> 
                 </div>
                 </Link>
 

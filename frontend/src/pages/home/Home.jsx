@@ -25,7 +25,7 @@ const Home = () => {
                         style={{ cursor: 'pointer', height: '174px' }}>
                             
                         <h5>Ctrl + A</h5>
-                        <strong className="m-0">Proveedores</strong>
+                        <strong className="m-0">Pedidos</strong>
                     </div>
                 </Link>
 

@@ -5,10 +5,10 @@ import Menu from './components/menu/Menu'
 import TopBar from './components/top-bar/TopBar'
 import Clients from './pages/clients/Clients'
 import EditProvider from './pages/edit-provider/EditProvider'
-import Home from './pages/Home'
+import Home from './pages/home/Home'
 import PageNotFound from './pages/page-not-found/PageNotFound'
 import ProviderProfile from './pages/provider-profile/ProviderProfile'
-import Providers from './pages/providers/Providers'
+import Providers from './pages/orders/Orders'
 
 import { useLocation } from "wouter";
 import CreateProvider from './pages/create-provider/CreateProvider';

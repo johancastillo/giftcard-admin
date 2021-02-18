@@ -1,42 +1,47 @@
 import { useEffect, useState } from "react"
-import ProviderCard from "../../components/provider-card/ProviderCard"
 import axios from 'axios'
 import { Link } from "wouter"
 
+const stateSelection = {
+    "completado": "",
+    "en progreso": "",
+    "": "",
+    "": "",
+    "": "",
+    "": "",
+    "": "",
+
+}
 
 const Providers = () => {
-    const [providers, setProviders] = useState([])
-    const [frequent, setFrecuent] = useState([])
+    const [orders, setOrders] = useState([])
     const [filters, setFilters] = useState({ name: "" })
 
     useEffect(() => {
-        axios.get('http://localhost:3004/providers?_sort=id&_order=desc')
+        axios.get('http://localhost:3004/orders?_sort=id&_order=desc')
             .then(
-                response => setProviders(response.data)
+                response => setOrders(response.data)
             )
             .catch(
                 err => console.log(err)
             )
     }, [])
 
-    useEffect(() => {
-        setFrecuent(providers.slice(0, 3))
-    }, [providers])
 
 
     useEffect(() => {
         if (filters.name) {
-            axios.get(`http://localhost:3004/providers?fullname_like=${filters.name}`)
+            axios.get(`http://localhost:3004/orders?transmitter_name_like=${filters.name}`)
                 .then(
-                    response => setProviders(response.data)
+                    response => setOrders(response.data)
                 )
                 .catch(
                     err => console.log(err)
                 )
         } else {
-            axios.get('http://localhost:3004/providers?_sort=id&_order=desc')
+            axios.get('http://localhost:3004/orders?_sort=id&_order=desc')
                 .then(
-                    response => setProviders(response.data)
+                    response => setOrders(response.data)
                 )
                 .catch(
                     err => console.log(err)
@@ -60,7 +65,7 @@ const Providers = () => {
 
     return (
         <div clasName="p-4">
-            <h3 className="text-center mt-4">Proveedores</h3>
+            <h3 className="text-center mt-4">Pedidos</h3>
 
 
             <div className="container px-4 d-flex justify-content-between">
@@ -84,25 +89,44 @@ const Providers = () => {
                 <table className="table table-striped table-hover">
                     <thead className="table-dark">
                         <tr>
-                            <th scope="col">Rif</th>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Servicio</th>
-                            <th scope="col">Teléfono</th>
+                            <th scope="col">Pedido</th>
+                            <th scope="col">Fecha</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col">Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
 
                         {
-                            providers.map(provider => {
+                            orders.map(order => {
+                                
+
                                 return (
-                                    <Link href={`/proveedores/${provider.rif}`}>
+                                    <Link href={`/proveedores/${order.id}`}>
                                         <tr style={{ cursor: 'pointer' }}>
-                                            <th scope="row">{`V-${provider.rif}`}</th>
+                                            <th scope="row">
+                                                {`#${order.id} ${order.transmitter_name}`}
+                                            </th>
+
                                             <td className="text-capitalize">
-                                                {`${provider.fullname}`}
+                                                {`${order.date} ${order.time}`}
                                             </td>
-                                            <td>{provider.service}</td>
-                                            <td>{provider.phone}</td>
+
+                                            <td>
+                                                <button type="button" class="btn btn-success">
+                                                    {order.state}
+                                                </button>
+                                            </td>
+
+                                            <td>
+                                                <button type="button" class="btn btn-info">
+                                                    <span className="icon icon-pencil"></span>
+                                                </button>
+
+                                                <button type="button" class="btn btn-danger mx-2">
+                                                    <span className="icon icon-trash"></span>
+                                                </button>
+                                            </td>
                                         </tr>
                                     </Link>
                                 )
@@ -150,41 +174,7 @@ const Providers = () => {
                 </nav>
             </div>
 
-            <br />
 
-            <div className="container">
-
-
-                <h4 className="text-center text-uppercase my-4">Más frecuentes</h4>
-                <div className="gallery mt-2 mb-5">
-
-
-                    {
-                        frequent.map(
-                            provider => {
-                                let image = provider.image
-                                image = image ? image.replace(/\//g, "/") : ""
-
-                                return (
-                                    <ProviderCard
-                                        key={provider.id}
-                                        rif={provider.rif}
-                                        fullname={provider.fullname}
-                                        lastname={provider.lastname}
-                                        type={provider.type}
-                                        service={provider.service}
-                                        image={image}
-                                    />
-                                )
-                            }
-                        )
-                    }
-
-                </div>
-
-
-
-            </div>
         </div>
     )
 }
