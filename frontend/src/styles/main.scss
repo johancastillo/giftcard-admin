@@ -185,12 +185,16 @@ a {
 .menu-lateral a {
 	display: block;
 	padding: 15px 40px;
-	color: #000;
+	color: #fff;
 	min-width: 800px;
 }
 
+.menu-lateral a.active{
+	color: #26a3bd;
+}
+
 .menu-lateral a:hover {
-	background: #e5e5e5;
+	background: #000;
 }
 
 .menu-lateral a.active {
@@ -199,8 +203,8 @@ a {
 }
 
 .menu-lateral .fas {
-	color: #606060;
-	margin-right: 32px;
+	color: #fff;
+	margin-right: 42px;
 	width: 20px;
 	text-align: center;
 }

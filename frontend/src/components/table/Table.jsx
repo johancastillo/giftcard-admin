@@ -7,7 +7,7 @@ const Table = ({ historical, total }) => {
 
             
 
-            <table className="table mt-4">
+            <table className="table table-light mt-4">
                 <thead>
                     <tr>
                         <th scope="col">Fecha</th>

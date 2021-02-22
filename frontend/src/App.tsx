@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Route, Switch } from 'wouter'
 
-import Menu from './components/menu/Menu'
+import MenuLateral from './components/menu-lateral/MenuLateral'
 import TopBar from './components/top-bar/TopBar'
 import Clients from './pages/clients/Clients'
 import EditProvider from './pages/edit-provider/EditProvider'
@@ -13,6 +13,7 @@ import Orders from './pages/orders/Orders'
 import { useLocation } from "wouter";
 import CreateProvider from './pages/create-provider/CreateProvider';
 import GiftCard from './pages/giftcard/GiftCard';
+
 
 const App = () => {
   const [location, setLocation] = useLocation();
@@ -38,7 +39,7 @@ const App = () => {
     <>
       <div className="contenedor" id="contenedor">
         <TopBar />
-        <Menu />
+        <MenuLateral />
 
         <Switch>
           <Route path="/" component={Home} />

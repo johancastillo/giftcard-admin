@@ -88,125 +88,151 @@ const Orders = () => {
             {/* <!-- Modal --> */}
 
 
-            <div clasName="p-4">
-                <h3 className="text-center mt-4">Pedidos</h3>
+            <div clasName="p-4" style={{ background: "#ecf0f5" }}>
 
 
-                <div className="container px-4 d-flex justify-content-between">
-                    <input type="text" style={{ width: '210px' }} className="form-control"
-                        placeholder={filters.name ? filters.name : "Buscar por nombre..."}
-                        onChange={filterName} />
+                <div className="mt-5 container px-4 d-flex justify-content-between">
+
+                    <div className="d-flex">
+                        <input type="text" style={{ width: '200px' }} className="form-control"
+                            placeholder={filters.name ? filters.name : "Buscar por código"}
+                            onChange={filterName} />
+
+                        <input type="text" style={{ width: '290px' }} className="form-control mx-2"
+                            placeholder={filters.name ? filters.name : "Buscar por nombre"}
+                            onChange={filterName} />
+
+                    </div>
+
+                    <div className="d-flex">
+
+                    <select class="form-select" aria-label="Default select example" style={{ width: "170px" }}>
+                        <option selected>Estado</option>
+                        <option value="1">Completado</option>
+                        <option value="2">En proceso</option>
+                        <option value="3">Rechazado</option>
+                    </select>
 
 
-                    <div>
                         <Link href="/crear-proveedor">
-                            <a className="btn btn-primary mx-2">+ Nuevo</a>
+                            <a className="btn btn-primary mx-2">+Nueva orden</a>
                         </Link>
 
                         <a className="btn btn-primary">
                             Filtrar
-                    </a>
+                        </a>
                     </div>
+
+
                 </div>
 
                 <div className="container px-4 mt-4">
-                    <table className="table table-striped table-hover">
-                        <thead className="table-dark">
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Emisor</th>
-                                <th scope="col">Beneficiario</th>
-                                <th scope="col">Fecha</th>
-                                <th scope="col">Estado</th>
-                                <th scope="col">Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody>
 
-                            {
-                                orders.map(order => {
+                    <div className="card">
+
+                        <div className="card-body">
+                            <h5>Listado de Ordenes de Compra</h5>
+                        </div>
+
+                        <div className="card-footer">
+                            <table className="table table-light table-striped table-hover">
+                                <thead className="">
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Emisor</th>
+                                        <th scope="col">Beneficiario</th>
+                                        <th scope="col">Fecha</th>
+                                        <th scope="col">Estado</th>
+                                        <th scope="col">Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    {
+                                        orders.map(order => {
 
 
-                                    return (
+                                            return (
 
-                                        <tr style={{ cursor: 'pointer' }}>
-                                            <Link href={`/proveedores/${order.id}`}>
-                                                <th scope="row" className="link">
-                                                    {`#${order.id}`}
-                                                </th>
-                                            </Link>
+                                                <tr style={{ cursor: 'pointer' }}>
+                                                    <Link href={`/proveedores/${order.id}`}>
+                                                        <th scope="row" className="link">
+                                                            {`#${order.id}`}
+                                                        </th>
+                                                    </Link>
 
-                                            <Link href={`/proveedores/${order.id}`}>
-                                                <td className="text-capitalize link">
-                                                    {`${order.transmitter_name}`}
-                                                </td>
-                                            </Link>
+                                                    <Link href={`/proveedores/${order.id}`}>
+                                                        <td className="text-capitalize link">
+                                                            {`${order.transmitter_name}`}
+                                                        </td>
+                                                    </Link>
 
-                                            <td className="text-capitalize">
-                                                {`${order.recipients_name}`}
-                                            </td>
+                                                    <td className="text-capitalize">
+                                                        {`${order.recipients_name}`}
+                                                    </td>
 
-                                            <td className="text-capitalize">
-                                                {`${order.date} ${order.time}`}
-                                            </td>
+                                                    <td className="text-capitalize">
+                                                        {`${order.date} ${order.time}`}
+                                                    </td>
 
-                                            <td>
-                                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                                    {order.state}
-                                                </button>
-                                            </td>
+                                                    <td>
+                                                        <span class="badge bg-success">{order.state}</span>
+                                                    </td>
 
-                                            <td>
-                                                <button type="button" class="btn btn-info">
-                                                    <span className="icon icon-pencil"></span>
-                                                </button>
+                                                    <td>
+                                                        <div class="dropdown">
+                                                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                Acciones
+  </a>
 
-                                                <button type="button" class="btn btn-danger mx-2">
-                                                    <span className="icon icon-trash"></span>
-                                                </button>
-                                            </td>
-                                        </tr>
+                                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                                <li>
+                                                                    <a class="dropdown-item" href="#">
+                                                                        <span className="icon icon-pencil"></span> Editar
+                                                            </a>
+                                                                </li>
 
-                                    )
-                                })
-                            }
+                                                                <li>
+                                                                    <a class="dropdown-item" href="#">
+                                                                        <span className="icon icon-trash"></span> Imprimir
+                                                            </a>
+                                                                </li>
 
-                        </tbody>
-                    </table>
+                                                                <li>
+                                                                    <a class="dropdown-item" href="#">
+                                                                        <span className="icon icon-trash"></span> Eliminar
+                                                            </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+
+
+                                                    </td>
+                                                </tr>
+
+                                            )
+                                        })
+                                    }
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
 
                 </div>
 
                 <div className="container px-4 mt-4">
                     <nav aria-label="Page navigation example">
-                        <ul className="pagination">
-                            <li className="page-item">
-                                <a className="page-link">
-                                    Anterior
-                            </a>
+                        <ul class="pagination justify-content-end">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
                             </li>
-
-                            <li className="page-item">
-                                <a className="page-link">
-                                    1
-                            </a>
-                            </li>
-
-                            <li className="page-item">
-                                <a className="page-link">
-                                    2
-                            </a>
-                            </li>
-
-                            <li className="page-item">
-                                <a className="page-link">
-                                    3
-                            </a>
-                            </li>
-
-                            <li className="page-item">
-                                <a className="page-link">
-                                    Siguiente
-                            </a>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
                             </li>
                         </ul>
                     </nav>

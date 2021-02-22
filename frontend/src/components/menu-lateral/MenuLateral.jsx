@@ -9,7 +9,7 @@ const Menu = () => {
     const clientPage = () => setPage('client')
 
     return (
-        <nav className="menu-lateral">
+        <nav className="menu-lateral" style={{background: "#222d32"}}>
 
             <Link href="/" onClick={homePage}>
                 <a className={page === 'home' ? 'active' : ""}>
