@@ -4,6 +4,12 @@
 	box-sizing: border-box;
 }
 
+.btn-default {
+    background-color: #f4f4f4;
+    color: #444;
+    border-color: #ddd;
+}
+
 .icon{
 	font-size: 20px;
 }
@@ -68,7 +74,7 @@ a {
 }
 
 .header .contenedor-logo .boton-menu:hover {
-	background: #E7E7E7;
+	background: #fff;
 }
 
 .header .contenedor-logo .logo .fas {

@@ -15,7 +15,7 @@ const stateSelection = {
 
 const Orders = () => {
     const [orders, setOrders] = useState([])
-    const [filters, setFilters] = useState({ name: "" })
+    const [filters, setFilters] = useState({ name: "", code: "" })
 
     useEffect(() => {
         axios.get('http://localhost:3004/orders?_sort=id&_order=desc')
@@ -65,28 +65,6 @@ const Orders = () => {
 
     return (
         <>
-            {/* <!-- Modal --> */}
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">
-                                Estado del pedido
-                            </h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            ...
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                            <button type="button" class="btn btn-primary">Guardar cambios</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {/* <!-- Modal --> */}
-
 
             <div clasName="p-4" style={{ background: "#ecf0f5" }}>
 
@@ -94,11 +72,11 @@ const Orders = () => {
                 <div className="mt-5 container px-4 d-flex justify-content-between">
 
                     <div className="d-flex">
-                        <input type="text" style={{ width: '200px' }} className="form-control"
-                            placeholder={filters.name ? filters.name : "Buscar por código"}
+                        <input type="text" style={{ width: '200px', borderRadius: "0" }} className="form-control"
+                            placeholder={filters.code ? filters.code : "Buscar por código"}
                             onChange={filterName} />
 
-                        <input type="text" style={{ width: '290px' }} className="form-control mx-2"
+                        <input type="text" style={{ width: '290px', borderRadius: "0" }} className="form-control mx-2"
                             placeholder={filters.name ? filters.name : "Buscar por nombre"}
                             onChange={filterName} />
 
@@ -106,19 +84,19 @@ const Orders = () => {
 
                     <div className="d-flex">
 
-                    <select class="form-select" aria-label="Default select example" style={{ width: "170px" }}>
-                        <option selected>Estado</option>
-                        <option value="1">Completado</option>
-                        <option value="2">En proceso</option>
-                        <option value="3">Rechazado</option>
-                    </select>
+                        <select class="form-select btn-default" style={{ width: "170px" }}>
+                            <option selected>Estado</option>
+                            <option value="1">Completado</option>
+                            <option value="2">En proceso</option>
+                            <option value="3">Rechazado</option>
+                        </select>
 
 
                         <Link href="/crear-proveedor">
-                            <a className="btn btn-primary mx-2">+Nueva orden</a>
+                            <a className="btn btn-default mx-2">+Nueva orden</a>
                         </Link>
 
-                        <a className="btn btn-primary">
+                        <a className="btn btn-default">
                             Filtrar
                         </a>
                     </div>
@@ -139,10 +117,10 @@ const Orders = () => {
                                 <thead className="">
                                     <tr>
                                         <th scope="col">#</th>
-                                        <th scope="col">Emisor</th>
-                                        <th scope="col">Beneficiario</th>
+                                        <th scope="col">Realizado por</th>
                                         <th scope="col">Fecha</th>
                                         <th scope="col">Estado</th>
+                                        <th scope="col">Total</th>
                                         <th scope="col">Acciones</th>
                                     </tr>
                                 </thead>
@@ -161,15 +139,13 @@ const Orders = () => {
                                                         </th>
                                                     </Link>
 
+                                                    
+
                                                     <Link href={`/proveedores/${order.id}`}>
                                                         <td className="text-capitalize link">
                                                             {`${order.transmitter_name}`}
                                                         </td>
                                                     </Link>
-
-                                                    <td className="text-capitalize">
-                                                        {`${order.recipients_name}`}
-                                                    </td>
 
                                                     <td className="text-capitalize">
                                                         {`${order.date} ${order.time}`}
@@ -178,10 +154,15 @@ const Orders = () => {
                                                     <td>
                                                         <span class="badge bg-success">{order.state}</span>
                                                     </td>
+                                                    
+                                                    <td className="text-capitalize">
+                                                        {`${order.recipients_name}`}
+                                                    </td>
+
 
                                                     <td>
                                                         <div class="dropdown">
-                                                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                                            <a class="btn btn-default dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                                                                 Acciones
   </a>
 
@@ -194,7 +175,7 @@ const Orders = () => {
 
                                                                 <li>
                                                                     <a class="dropdown-item" href="#">
-                                                                        <span className="icon icon-trash"></span> Imprimir
+                                                                        <span className="icon icon-printer"></span> Imprimir
                                                             </a>
                                                                 </li>
 
@@ -222,22 +203,27 @@ const Orders = () => {
 
                 </div>
 
-                <div className="container px-4 mt-4">
+                <div className="container p-4 d-flex mb-5 justify-content-between align-items-center">
+                    <p className="mx-2">Mostrando 1 al 15 de 26 registros</p>
+
                     <nav aria-label="Page navigation example">
                         <ul class="pagination justify-content-end">
                             <li class="page-item disabled">
-                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Anterior</a>
                             </li>
                             <li class="page-item"><a class="page-link" href="#">1</a></li>
                             <li class="page-item"><a class="page-link" href="#">2</a></li>
                             <li class="page-item"><a class="page-link" href="#">3</a></li>
                             <li class="page-item">
-                                <a class="page-link" href="#">Next</a>
+                                <a class="page-link" href="#">Siguiente</a>
                             </li>
                         </ul>
                     </nav>
+
                 </div>
 
+
+               
 
             </div>
 

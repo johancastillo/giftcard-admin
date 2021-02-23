@@ -23,11 +23,11 @@ const App = () => {
     window.addEventListener('keydown', e => {
       if (e.ctrlKey === true && e.key == 'a') {
         e.preventDefault()
-        setLocation("/proveedores")
-      }else if(e.ctrlKey === true && e.key == 'q'){
+        setLocation("/pedidos")
+      } else if (e.ctrlKey === true && e.key == 'q') {
         e.preventDefault()
         setLocation("/")
-      }else if(e.ctrlKey === true && e.key == 'm'){
+      } else if (e.ctrlKey === true && e.key == 'm') {
         e.preventDefault()
         setLocation("/clientes")
       }
@@ -51,6 +51,7 @@ const App = () => {
           <Route path="/clientes" component={Clients} />
           <Route component={PageNotFound} />
         </Switch>
+
 
       </div>
     </>
