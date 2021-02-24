@@ -5,20 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 </head>
 <body>
 
-<h1>Genere Code Giftcard</h1>
+<h1 class="text-center">Genere Code Giftcard</h1>
 
 <?php
 
     // Setings
     $settings = [
         "characters" => 14,
-        "symbols" => true,
+        "symbols" => false,
 		"numbers" => true,
 		"capitalLetters" => true,
-		"lowercase" => true
+		"lowercase" => false
     ];
 
     // Characters
@@ -50,7 +52,17 @@
             $charactersFinished = $charactersFinished." ".$characters["lowercase"];
         }
 
-        echo $charactersFinished;
+        // echo rand(5, 26);
+        
+        for($i = 1; $i < $settings["characters"]; $i++ ){
+            $num = rand(0, 35);
+
+            $code = $code.$charactersFinished[$num];
+
+        }
+
+
+        echo '<h3 class="text-center">' . $code . '</h3>';
 
     }
     
