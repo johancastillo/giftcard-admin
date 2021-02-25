@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,7 +16,7 @@
 
     // Setings
     $settings = [
-        "characters" => 14,
+        "characters" => 10,
         "symbols" => false,
 		"numbers" => true,
 		"capitalLetters" => true,
@@ -54,8 +54,8 @@
 
         // echo rand(5, 26);
         
-        for($i = 1; $i < $settings["characters"]; $i++ ){
-            $num = rand(0, 35);
+        for($i = 1; $i <= $settings["characters"]; $i++ ){
+            $num = rand(0, (strlen($charactersFinished) -1));
 
             $code = $code.$charactersFinished[$num];
 
