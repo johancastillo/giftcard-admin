@@ -16,7 +16,7 @@
 
     // Setings
     $settings = [
-        "characters" => 10,
+        "characters" => 14,
         "symbols" => false,
 		"numbers" => true,
 		"capitalLetters" => true,

@@ -2,21 +2,22 @@ import { useEffect, useState } from "react"
 import axios from 'axios'
 import { Link } from "wouter"
 
-const stateSelection = {
-    "completado": "",
-    "en progreso": "",
-    "": "",
-    "": "",
-    "": "",
-    "": "",
-    "": "",
-
-}
 
 const Orders = () => {
+
+    /* 
+    #############
+    #   States  #
+    #############
+    */
     const [orders, setOrders] = useState([])
     const [filters, setFilters] = useState({ name: "", code: "" })
 
+    /* 
+    ####################
+    #  GET Orders  #
+    ####################
+    */
     useEffect(() => {
         axios.get('http://localhost:3004/orders?_sort=id&_order=desc')
             .then(
@@ -28,7 +29,11 @@ const Orders = () => {
     }, [])
 
 
-
+    /* 
+    #################
+    # Filter Orders #
+    #################
+    */
     useEffect(() => {
         if (filters.name) {
             axios.get(`http://localhost:3004/orders?transmitter_name_like=${filters.name}`)
@@ -49,9 +54,11 @@ const Orders = () => {
         }
     }, [filters])
 
-    //useEffect(() => setFilters({name: ""}))
-
-    // Event handles
+    /* 
+    ####################
+    #  Events handles  #
+    ####################
+    */
     const filterName = e => {
         console.log(filters)
 
@@ -63,6 +70,11 @@ const Orders = () => {
         }
     }
 
+    /* 
+    ##################
+    #  Render View   #
+    ##################
+    */
     return (
         <>
 

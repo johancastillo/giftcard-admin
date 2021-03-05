@@ -27,7 +27,7 @@ const TopBar = () => {
     }, [])
 
     return (
-        <header className="header" style={{background: "#e2e2e2", borderBottom: ".5px solid rgb(187 184 184)"}}>
+        <header className="header">
             <div className="contenedor-logo">
                 <button id="boton-menu" className="boton-menu">
                     <i className="fas fa-bars"></i>

@@ -94,7 +94,7 @@
     },
     {
       "id": 8,
-      "transmitter_name": "Darwin Brandri",
+      "transmitter_name": "Darwin Bandri",
       "date": "27-07-2001",
       "time": "12:06 AM",
       "transmitter_email": "jcjohan2707@gmail.com",
@@ -189,5 +189,10 @@
       "description": "Mi cumpleaños",
       "value": "-100"
     }
+  ],
+  "users": [
+    {},
+    {},
+    {}
   ]
 }
