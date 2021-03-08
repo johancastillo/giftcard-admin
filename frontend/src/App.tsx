@@ -1,18 +1,18 @@
 import { useEffect } from 'react';
 import { Route, Switch } from 'wouter'
 
-import MenuLateral from './components/menu-lateral/MenuLateral'
-import TopBar from './components/top-bar/TopBar'
-import Clients from './pages/clients/Clients'
-import EditProvider from './pages/edit-provider/EditProvider'
-import Home from './pages/home/Home'
-import PageNotFound from './pages/page-not-found/PageNotFound'
-import ProviderProfile from './pages/provider-profile/ProviderProfile'
-import Orders from './pages/orders/Orders'
+import MenuLateral from './components/MenuLateral'
+import TopBar from './components/TopBar'
+import Clients from './pages/Clients'
+import EditProvider from './pages/EditProvider'
+import Home from './pages/Home'
+import PageNotFound from './pages/PageNotFound'
+import ProviderProfile from './pages/ProviderProfile'
+import Orders from './pages/Orders'
 
 import { useLocation } from "wouter";
-import CreateProvider from './pages/create-provider/CreateProvider';
-import GiftCard from './pages/giftcard/GiftCard';
+import CreateProvider from './pages/CreateProvider';
+import GiftCard from './pages/GiftCard';
 
 
 const App = () => {

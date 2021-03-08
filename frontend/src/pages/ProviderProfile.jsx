@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
-import ProviderCard from "../../components/provider-card/ProviderCard"
-import Table from "../../components/table/Table"
+import ProviderCard from "../components/ProviderCard"
+import Table from "../components/Table"
 import axios from 'axios'
 import { Link, useLocation } from "wouter"
 

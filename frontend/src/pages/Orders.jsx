@@ -43,6 +43,14 @@ const Orders = () => {
                 .catch(
                     err => console.log(err)
                 )
+        } else if (filters.code) {
+            axios.get(`http://localhost:3004/orders?id_like=${filters.code}`)
+                .then(
+                    response => setOrders(response.data)
+                )
+                .catch(
+                    err => console.log(err)
+                )
         } else {
             axios.get('http://localhost:3004/orders?_sort=id&_order=desc')
                 .then(
@@ -118,7 +126,7 @@ const Orders = () => {
 
                 <div className="container px-4 mt-4">
 
-                    <div className="card">
+                    <div className="card" style={{ boxShadow: "0 0 15px rgb(0 0 0 / 50%)" }}>
 
                         <div className="card-body">
                             <h5>Listado de Ordenes de Compra</h5>
@@ -151,7 +159,7 @@ const Orders = () => {
                                                         </th>
                                                     </Link>
 
-                                                    
+
 
                                                     <Link href={`/proveedores/${order.id}`}>
                                                         <td className="text-capitalize link">
@@ -166,7 +174,7 @@ const Orders = () => {
                                                     <td>
                                                         <span class="badge bg-success">{order.state}</span>
                                                     </td>
-                                                    
+
                                                     <td className="text-capitalize">
                                                         {`${order.recipients_name}`}
                                                     </td>
@@ -235,7 +243,7 @@ const Orders = () => {
                 </div>
 
 
-               
+
 
             </div>
 
